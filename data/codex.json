@@ -1,0 +1,23 @@
+{
+  "locals": {
+    "title": "Codex Hub",
+    "googleanalytics": "UA-XXXXXXXXX-X",
+    "mixpanel": "",
+    "ghuser": "logicalparadox",
+    "ghbaseurl": "/codex-hub",
+    "ghproject": "codex-hub",
+    "version": "0.1.0",
+    "hasdownloads": false,
+    "description": "Codex Hub is a GitHub friendly template for [Codex](http://codexjs.com) that can be used as a starting point for [node](http://nodejs.org) & javascript project documentation sites."
+  },
+  "plugins": [
+    { "name": "code"
+    , "files": [
+          { "name": "constructor"
+          , "title": "the constructor"
+          , "file": "../code/constructor.js"
+          , "description": "This is the description for the constructor." }
+      ]
+    }
+  ]
+}
