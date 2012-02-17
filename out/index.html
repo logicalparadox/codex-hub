@@ -28,9 +28,9 @@ _gaq.push(['_trackPageview']);
   <body>
     <nav>
       <ul class="sections">
-        <li><a href="#installation" class="scroll">Installation</a>
+        <li><a href="#installation" class="scroll">Features</a>
         </li>
-        <li><a href="#styles" class="scroll">Assertion Styles</a>
+        <li><a href="#styles" class="scroll">Customizing</a>
         </li>
         <li><a href="#plugins" class="scroll">Plugins</a>
         </li>
@@ -82,76 +82,96 @@ _gaq.push(['_trackPageview']);
     </header>
     <section id="content">
       <article>
-        <h1 id="installation-section"><a name="installation">Installation</a>
+        <h1 id="installation-section"><a name="installation">Features</a>
         </h1>
         <section>
-<p>Chai is available for both user with both node.js and the browser using any
-test framework you like. Chai tests itself using <a href="https://github.com/visionmedia/mocha">mocha</a>.
+<p>Codex Hub provides a number of features to easily set up a documentation site for your GitHub
+projects. Hub expands on the <a href="http://codexjs.com">Codex</a> skeleton theme with theme support for
+JSDoc style inline comments, social media sharing, and analytics support. Here is a full list 
+of features.
 
 </p>
-<h3>Node.js</h3>
-<p>Package is available through <a href="http://npmjs.org">npm</a>:
+<ul><li>Stylus color and font variables for quick customization</li><li>Theme files for API docs summary and JSDocs pages</li><li>Tons of supported site-wide variables</li><li>Easily switch between gh-pages or custom domain link structure</li><li>Single or multi-page site navigation, or both</li><li>Client-side code highlighting</li><li>Google Analytics and Mixpanel integration </li></ul>
+<h2>What is Codex</h2>
+<p>Codex is a simple tool for building static webites. It takes a template constructed in
+<a href="http://github.com/visionmedia/jade">Jade</a> and themed in <a href="http://github.com/learnboost/stylus">Stylus</a>,
+and applies it to a collection of Markdown documents. The result is a complete html site
+that can be hosted using your favorite static webserver, or on github-pages. 
 
 </p>
-<pre><code>npm install chai</code></pre>
-<p>Recommend adding it to package.json devDependancies.
-
-</p>
-<h3>Browser</h3>
-<p>Include the chai browser build in your testing suite.
-
-</p>
-<pre><code>&lt;script src="chai.js" type="text/javascript">&lt;/script></code></pre>
-<p>Currently supports all modern browsers: IE 9+, Chrome 7+, FireFox 4+, Safari 5+
-
-</p>
-<p>The latest tagged version will also be available for linking at <a href="/chai.js"><a href="http://chaijs.com/chai.js">http://chaijs.com/chai.js</a></a>.
+<p>For more information, visit <a href="http://codexjs.com">codexjs.com</a>.
 </p>
         </section>
-        <h1 id="styles-section"><a name="styles">Assertion Styles</a>
+        <h1 id="styles-section"><a name="styles">Customizing</a>
         </h1>
         <section>
-<h3>Expect</h3>
-<p>The <code>expect</code> style is server/browser BDD style assert language.
+<h2>Site Wide Template Variables</h2>
+<p>Site-wide variables, or <code>locals</code> in the <code>codex.json</code> configuration file, make it easy to 
+to deploy a site without customizing the template. Here are the currently support variables: 
 
 </p>
-<pre><code>  <span class="keyword">var</span> expect = <span class="keyword">require</span>(<span class="string">'chai'</span>).expect
-    , foo = <span class="string">'bar'</span>
-    , beverages = { tea: [ <span class="string">'chai'</span>, <span class="string">'matcha'</span>, <span class="string">'oolong'</span> ] };
-
-  expect(foo).to.be.a(<span class="string">'string'</span>);
-  expect(foo).to.equal(<span class="string">'bar'</span>);
-  expect(foo).to.have.length(<span class="number">3</span>);
-  expect(beverages).to.have.property(<span class="string">'tea'</span>).with.length(<span class="number">3</span>);</code></pre>
-<h3>Should</h3>
-<p>The <code>should</code> style was inspired by <a href="https://github.com/visionmedia/should.js">should.js</a>
-and is completely API compatible.
-
-</p>
-<pre><code>  <span class="keyword">var</span> should = <span class="keyword">require</span>(<span class="string">'chai'</span>).should() <span class="comment">//actually call the the function</span>
-    , foo = <span class="string">'bar'</span>
-    , beverages = { tea: [ <span class="string">'chai'</span>, <span class="string">'matcha'</span>, <span class="string">'oolong'</span> ] };
-
-  foo.should.be.a(<span class="string">'string'</span>);
-  foo.should.equal(<span class="string">'bar'</span>);
-  foo.should.have.length(<span class="number">3</span>);
-  beverages.should.have.property(<span class="string">'tea'</span>).with.length(<span class="number">3</span>);</code></pre>
-<p>Notice that the <code>expect</code> require is just a reference to the <code>expect</code> function, whereas
-with the <code>should</code> require, the function is being executed.
+<pre><code>{
+  <span class="string">"locals"</span>: {
+    <span class="string">"title"</span>: <span class="string">"Codex Hub"</span>,
+    <span class="string">"description"</span>: <span class="string">"Codex Hub is a GitHub friendly template for [Codex](http://codexjs.com) ..."</span>
+    <span class="string">"googleanalytics"</span>: <span class="string">"UA-XXXXXXXXX-X"</span>,
+    <span class="string">"mixpanel"</span>: <span class="string">""</span>,
+    <span class="string">"ghuser"</span>: <span class="string">"logicalparadox"</span>,
+    <span class="string">"ghproject"</span>: <span class="string">"codex-hub"</span>,
+    <span class="string">"ghbaseurl"</span>: <span class="string">"/codex-hub"</span>,
+    <span class="string">"tweeturl"</span>: <span class="string">"http://alogicalparadox.com/codex-hub"</span>,
+    <span class="string">"tweetvia"</span>: <span class="string">"jakeluer"</span>,
+    <span class="string">"tweetrelated"</span>: <span class="string">"jakeluer"</span>,
+    <span class="string">"twitterfollow"</span>: <span class="string">"jakeluer"</span>,
+  },
+<span class="comment">// ...</span></code></pre>
+<h5>title</h5>
+<p>The site title. Used on all pages for the <code>&lt;title&gt;</code> tag.
 
 </p>
-<h3>Assert</h3>
-<p>The <code>assert</code> style is like the node.js included assert utility with few extras.
+<h5>description</h5>
+<p>The primary site description to show in the header. Will be parsed for Markdown.
 
 </p>
-<pre><code>  <span class="keyword">var</span> assert = <span class="keyword">require</span>(<span class="string">'chai'</span>).assert
-    , foo = <span class="string">'bar'</span>
-    , beverages = { tea: [ <span class="string">'chai'</span>, <span class="string">'matcha'</span>, <span class="string">'oolong'</span> ] };
+<h5>googleanalytics</h5>
+<p>The <a href="http://google.com/analytics">Google Analytics</a> site id. Remove this line to disable google analytics.
 
-  assert.typeOf(foo, <span class="string">'string'</span>, <span class="string">'foo is a string'</span>);
-  assert.equal(foo, <span class="string">'bar'</span>, <span class="string">'foo equal `bar`'</span>);
-  assert.length(foo, <span class="number">3</span>, <span class="string">'foo`s value has a length of 3'</span>);
-  assert.length(beverages.tea, <span class="number">3</span>, <span class="string">'beverages has 3 types of tea'</span>);</code></pre>
+</p>
+<h5>maxpanel</h5>
+<p><a href="http://mixpanel.com">MixPanel</a> analytics id. Remove this line to disable mixpanel integration. Events currently supported are:
+
+</p>
+<ul><li>Opening / Closing of <code>view-source</code> on API pages. </li></ul>
+<h5>ghuser</h5>
+<p>GitHub user name is required. If project is part of an organization, use that instead.
+
+</p>
+<h5>ghproject</h5>
+<p>Github project name is required.
+
+</p>
+<h5>ghbaseurl</h5>
+<p>If you are hosting this site off of the root domain, such as the default gh-pages configuration,
+use this to specify the folder structure. If being hosted at root of domain, leave as empty: <code>&quot;&quot;</code>.
+
+</p>
+<h5>tweeturl</h5>
+<p>The url to use for Tweet button.
+
+</p>
+<h5>tweetvia</h5>
+<p>The <code>via</code> data variable for the tweet buttom.
+
+</p>
+<h5>tweetrelated</h5>
+<p>The <code>related</code> data variable for the tweet buttonm will be recommended upon a successful tweet.
+
+</p>
+<h5>twitterfollow</h5>
+<p>User to recommend in the <code>Follow @user</code> button. Remove to remove the button.
+
+
+</p>
         </section>
         <h1 id="plugins-section"><a name="plugins">Plugins</a>
         </h1>
@@ -220,8 +240,10 @@ in other browsers or other version.
       </article>
     </section>
     <footer>
-      <div class="branding">Codex Hub is&nbsp;<a href="http://alogicalparadox.com">a logical paradox</a>. site generated by
-<a href="http://codexjs.com">codex.</a>
+      <div class="branding"><a href="http://github.com/logicalparadox/codex-hub">codex hub</a>&nbsp;template by
+<a href="http://alogicalparadox.com">a logical paradox</a>. site generated by
+<a href="http://codexjs.com">codex</a>.
+
       </div>
     </footer>
   </body>
