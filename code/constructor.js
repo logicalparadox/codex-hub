@@ -7,12 +7,10 @@
  *
  * Can be markdown. Lorem ipsum.
  *
- * ```js
- * // with code blocks
- * function noop () {
- *   return true;
- * }
- * ```
+ *     // with code blocks
+ *     function noop () {
+ *       return true;
+ *     }
  *
  * ### Set amit.
  */
