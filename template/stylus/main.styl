@@ -84,7 +84,7 @@ header
     border-radius 5px
     padding 10px
     position relative
-    min-height 100px
+    min-height 90px
     h4
       text-shadow 1px 1px 0px #fff
       margin-bottom 10px
@@ -107,28 +107,11 @@ header
     #latestCommitMessage
       line-height 20px
       text-shadow 1px 1px 0px #fff
-    #clone
-      position absolute
-      bottom 10px
-      right 10px
-      left 10px
-      .fork
-        button-shiny(buttonbig, #fff, #cc3300)
-        cursor pointer
+    #buttons
+      margin-top 10px
+      clearfix()
+      .btn
         float left
-        display inline-block
-      .clone
-        color lighten(#000, 40%)
-        float left
-        display inline-block
-        margin-left 15px
-        background clonebg
-        border-radius 5px
-        padding 0px 15px
-        font 11px "Bitstream Vera Sans Mono", "Courier", monospace
-        line-height 25px
-        max-width 545px
-        overflow hidden
     #links
       position absolute
       top 10px

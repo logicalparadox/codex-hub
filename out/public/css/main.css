@@ -224,7 +224,7 @@ header .gh {
   border-radius: 5px;
   padding: 10px;
   position: relative;
-  min-height: 100px;
+  min-height: 90px;
 }
 header .gh:before,
 header .gh:after {
@@ -263,55 +263,20 @@ header .gh #latestCommitMessage {
   line-height: 20px;
   text-shadow: 1px 1px 0px #fff;
 }
-header .gh #clone {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  left: 10px;
+header .gh #buttons {
+  margin-top: 10px;
+  zoom: 1;
 }
-header .gh #clone .fork {
-  display: inline-block;
-  padding: 0.5em 1em;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #a2aab8), color-stop(1, #929cac));
-  background: -webkit-linear-gradient(top, #a2aab8 0%, #929cac 100%);
-  background: -moz-linear-gradient(top, #a2aab8 0%, #929cac 100%);
-  background: linear-gradient(top, #a2aab8 0%, #929cac 100%);
-  border: 1px solid #748095;
-  font: 11px/normal helvetica, arial, freesans, clean, sans-serif;
-  color: #fff;
-  text-decoration: none;
-  text-shadow: 1px 1px 0px #afb6c2;
-  font-weight: bold;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  cursor: pointer;
+header .gh #buttons:before,
+header .gh #buttons:after {
+  content: "";
+  display: table;
+}
+header .gh #buttons:after {
+  clear: both;
+}
+header .gh #buttons .btn {
   float: left;
-  display: inline-block;
-}
-header .gh #clone .fork:hover {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eb3b00), color-stop(1, #c30));
-  background: -webkit-linear-gradient(top, #eb3b00 0%, #c30 100%);
-  background: -moz-linear-gradient(top, #eb3b00 0%, #c30 100%);
-  background: linear-gradient(top, #eb3b00 0%, #c30 100%);
-  color: #fff;
-  text-shadow: -1px -1px 0px #992600;
-  border: 1px solid #ad2b00;
-}
-header .gh #clone .clone {
-  color: #666;
-  float: left;
-  display: inline-block;
-  margin-left: 15px;
-  background: #e4dad8;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  padding: 0px 15px;
-  font: 11px "Bitstream Vera Sans Mono", "Courier", monospace;
-  line-height: 25px;
-  max-width: 545px;
-  overflow: hidden;
 }
 header .gh #links {
   position: absolute;

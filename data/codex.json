@@ -6,6 +6,10 @@
     "ghuser": "logicalparadox",
     "ghbaseurl": "/codex-hub",
     "ghproject": "codex-hub",
+    "tweeturl": "http://alogicalparadox.com/codex-hub",
+    "tweetvia": "jakeluer",
+    "tweetrelated": "jakeluer",
+    "twitterfollow": "jakeluer",
     "version": "0.1.0",
     "hasdownloads": false,
     "description": "Codex Hub is a GitHub friendly template for [Codex](http://codexjs.com) that can be used as a starting point for [node](http://nodejs.org) & javascript project documentation sites."
