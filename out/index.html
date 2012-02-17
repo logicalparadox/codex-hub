@@ -28,15 +28,11 @@ _gaq.push(['_trackPageview']);
   <body>
     <nav>
       <ul class="sections">
-        <li><a href="#installation" class="scroll">Features</a>
+        <li><a href="#features" class="scroll">Features</a>
         </li>
-        <li><a href="#styles" class="scroll">Customizing</a>
+        <li><a href="#installation" class="scroll">Installation</a>
         </li>
-        <li><a href="#plugins" class="scroll">Plugins</a>
-        </li>
-        <li><a href="#help" class="scroll">Getting Help</a>
-        </li>
-        <li><a href="#contributor" class="scroll">Contributing</a>
+        <li><a href="#customizing" class="scroll">Customizing</a>
         </li>
       </ul>
       <ul class="code">
@@ -82,7 +78,7 @@ _gaq.push(['_trackPageview']);
     </header>
     <section id="content">
       <article>
-        <h1 id="installation-section"><a name="installation">Features</a>
+        <h1 id="features-section"><a name="features">Features</a>
         </h1>
         <section>
 <p>Codex Hub provides a number of features to easily set up a documentation site for your GitHub
@@ -91,7 +87,7 @@ JSDoc style inline comments, social media sharing, and analytics support. Here i
 of features.
 
 </p>
-<ul><li>Stylus color and font variables for quick customization</li><li>Theme files for API docs summary and JSDocs pages</li><li>Tons of supported site-wide variables</li><li>Easily switch between gh-pages or custom domain link structure</li><li>Single or multi-page site navigation, or both</li><li>Client-side code highlighting</li><li>Google Analytics and Mixpanel integration </li></ul>
+<ul><li>Stylus color and font variables for quick customization</li><li>Tons of supported site-wide variables</li><li>Theme files for javascript docs summary and commented pages</li><li>Easily switch between gh-pages or custom domain link structure</li><li>Single or multi-page site navigation, or both</li><li>Client-side code highlighting and theme support</li><li>Google Analytics and Mixpanel integration </li></ul>
 <h2>What is Codex</h2>
 <p>Codex is a simple tool for building static webites. It takes a template constructed in
 <a href="http://github.com/visionmedia/jade">Jade</a> and themed in <a href="http://github.com/learnboost/stylus">Stylus</a>,
@@ -102,7 +98,22 @@ that can be hosted using your favorite static webserver, or on github-pages.
 <p>For more information, visit <a href="http://codexjs.com">codexjs.com</a>.
 </p>
         </section>
-        <h1 id="styles-section"><a name="styles">Customizing</a>
+        <h1 id="installation-section"><a name="installation">Installation</a>
+        </h1>
+        <section>
+<p>To use this theme, either clone or download as a starting point your project then customize <code>data/codex.json</code>
+to meet your needs. The following templates are provided:
+
+</p>
+<ul><li><strong>index.jade</strong> - The home page, but can also be easily modified for any &quot;sectioned&quot; pages.</li><li><strong>code-index.jade</strong> - The api docs summary pages. Pulls a list of pages from the <code>code</code> plugin and display their description.</li><li><strong>code.jade</strong> - Displays the api docs for any pages which are listed as having inline documentation.</li><li><strong>layout.jade</strong> - The header/footer template for all HTML pages. </li></ul>
+<p>A common for GitHub projects is to use this project as the <code>docs</code> folder. Then, remove the <code>code</code> folder
+provided and reference your own javascript files from in the <code>codex.json</code> file. You can view the configuration
+for <a href="https://github.com/logicalparadox/chai/blob/master/docs/data/codex.json">chai.js</a> for a production example.
+
+
+</p>
+        </section>
+        <h1 id="customizing-section"><a name="customizing">Customizing</a>
         </h1>
         <section>
 <h2>Site Wide Template Variables</h2>
@@ -115,7 +126,7 @@ to deploy a site without customizing the template. Here are the currently suppor
     <span class="string">"title"</span>: <span class="string">"Codex Hub"</span>,
     <span class="string">"description"</span>: <span class="string">"Codex Hub is a GitHub friendly template for [Codex](http://codexjs.com) ..."</span>
     <span class="string">"googleanalytics"</span>: <span class="string">"UA-XXXXXXXXX-X"</span>,
-    <span class="string">"mixpanel"</span>: <span class="string">""</span>,
+    <span class="string">"mixpanel"</span>: <span class="string">"xxxxx"</span>,
     <span class="string">"ghuser"</span>: <span class="string">"logicalparadox"</span>,
     <span class="string">"ghproject"</span>: <span class="string">"codex-hub"</span>,
     <span class="string">"ghbaseurl"</span>: <span class="string">"/codex-hub"</span>,
@@ -125,117 +136,8 @@ to deploy a site without customizing the template. Here are the currently suppor
     <span class="string">"twitterfollow"</span>: <span class="string">"jakeluer"</span>,
   },
 <span class="comment">// ...</span></code></pre>
-<h5>title</h5>
-<p>The site title. Used on all pages for the <code>&lt;title&gt;</code> tag.
-
-</p>
-<h5>description</h5>
-<p>The primary site description to show in the header. Will be parsed for Markdown.
-
-</p>
-<h5>googleanalytics</h5>
-<p>The <a href="http://google.com/analytics">Google Analytics</a> site id. Remove this line to disable google analytics.
-
-</p>
-<h5>maxpanel</h5>
-<p><a href="http://mixpanel.com">MixPanel</a> analytics id. Remove this line to disable mixpanel integration. Events currently supported are:
-
-</p>
-<ul><li>Opening / Closing of <code>view-source</code> on API pages. </li></ul>
-<h5>ghuser</h5>
-<p>GitHub user name is required. If project is part of an organization, use that instead.
-
-</p>
-<h5>ghproject</h5>
-<p>Github project name is required.
-
-</p>
-<h5>ghbaseurl</h5>
-<p>If you are hosting this site off of the root domain, such as the default gh-pages configuration,
-use this to specify the folder structure. If being hosted at root of domain, leave as empty: <code>&quot;&quot;</code>.
-
-</p>
-<h5>tweeturl</h5>
-<p>The url to use for Tweet button.
-
-</p>
-<h5>tweetvia</h5>
-<p>The <code>via</code> data variable for the tweet buttom.
-
-</p>
-<h5>tweetrelated</h5>
-<p>The <code>related</code> data variable for the tweet buttonm will be recommended upon a successful tweet.
-
-</p>
-<h5>twitterfollow</h5>
-<p>User to recommend in the <code>Follow @user</code> button. Remove to remove the button.
-
-
-</p>
-        </section>
-        <h1 id="plugins-section"><a name="plugins">Plugins</a>
-        </h1>
-        <section>
-<h3>Available Plugins</h3>
-<p>The Chai community is growing! Plugins allow developers to expand Chai&apos;s available 
-assertions. Here is what the community has come up with so far:
-
-</p>
-<ul><li><a href="https://github.com/logicalparadox/chai-spies">chai-spies</a> is a basic spy implementation for chai. It&apos;s also
-a good resource for building chai plugins that work in both node.js and the browser.</li><li><a href="https://github.com/jfirebaugh/chai-jquery">chai-jquery</a> by <a href="https://github.com/jfirebaugh">@jfirebaugh</a>
-provides deep jQuery integration with chai <code>should</code> and <code>expect</code>.</li><li><a href="https://github.com/vesln/jack">jack</a> by <a href="https://github.com/vesln">@vesln</a> is a mock/stub library that 
-can be used as a stand-alone or with chai.</li><li><a href="https://github.com/domenic/sinon-chai">sinon-chai</a> by <a href="https://github.com/domenic">@domenic</a> extends chai with 
-assertions for the Sinon.js mocking framework.</li></ul>
-        </section>
-        <h1 id="help-section"><a name="help">Getting Help</a>
-        </h1>
-        <section>
-<p>If you have questions or issues, please use this projects <a href="https://github.com/logicalparadox/chai/issues">Github Issues</a>.
-</p>
-        </section>
-        <h1 id="contributor-section"><a name="contributor">Contributing</a>
-        </h1>
-        <section>
-<h3>Developing</h3>
-<p>Please avoid making changes to the browser versions of chai if you are developing in the browser. All
-changes to the library are to be made to <code>lib/*</code> and then packaged for the browser using the <code>make</code>
-command.
-
-</p>
-<h3>Testing</h3>
-<p>Tests are written in <code>exports</code> style on <a href="http://visionmedia.github.com/mocha/">mocha test framework</a>.
-There is a test file for each of the interfaces. The tests for <code>expect</code> and <code>assert</code> must pass in node.js
-and in the browser, whereas the should tests only need to pass on node.js.
-
-</p>
-<p>Browsers tests are currently known to pass in Chrome 16 and Firefox 8. Please let me know if you can test
-in other browsers or other version.
-
-</p>
-<h4>Server Side Testing</h4>
-<p>It&apos;s quite simple...
-
-</p>
-<pre><code>  make test</code></pre>
-<h4>Browser Side Testing</h4>
-<p>It&apos;s also quite simple. Open up <code>test/browser/index.html</code> in your nearest browser.
-
-
-</p>
-<h3>Building</h3>
-<p>If you have made changes to any of the components, you must rebuild the browser package.
-
-</p>
-<pre><code>  $ make</code></pre>
-<h3>Contributors</h3>
-<pre><code> project: chai
- commits: 145
- files  : 57
- authors: 
-   142  Jake Luer               97.9%
-     1  Domenic Denicola        0.7%
-     1  John Firebaugh          0.7%
-     1  Vinay Pulim             0.7%</code></pre>
+<ul><li><strong>title</strong> - The site title. Used on all pages for the <code>&lt;title&gt;</code> tag.</li><li><strong>description</strong> - The primary site description to show in the header. Will be parsed for Markdown.</li><li><strong>googleanalytics</strong> - The <a href="http://google.com/analytics">Google Analytics</a> site id. Remove this line to disable google analytics.</li><li><strong>maxpanel</strong> - <a href="http://mixpanel.com">MixPanel</a> analytics id. Remove this line to disable mixpanel integration.</li><li><strong>ghuser</strong> - GitHub user name is required. If project is part of an organization, use that instead.</li><li><strong>ghproject</strong> - Github project name is required.</li><li><strong>ghbaseurl</strong> - If you are hosting this site off of the root domain, such as the default gh-pages configuration,
+use this to specify the folder structure. If being hosted at root of domain, leave as empty: <code>&quot;&quot;</code>.</li><li><strong>tweeturl</strong> - The url to use for Tweet button.</li><li><strong>tweetvia</strong> - The <code>via</code> data variable for the tweet buttom.</li><li><strong>tweetrelated</strong> 0 The <code>related</code> data variable for the tweet buttonm will be recommended upon a successful tweet.</li><li><strong>twitterfollow</strong> - User to recommend in the <code>Follow @user</code> button. Remove to remove the button. </li></ul>
         </section>
       </article>
     </section>

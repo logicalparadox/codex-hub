@@ -11,10 +11,10 @@ of features.
 
 * Stylus color and font variables for quick customization
 * Tons of supported site-wide variables
-* Theme files for API docs summary and JSDocs pages
+* Theme files for javascript docs summary and commented pages
 * Easily switch between gh-pages or custom domain link structure
 * Single or multi-page site navigation, or both
-* Client-side code highlighting
+* Client-side code highlighting and theme support
 * Google Analytics and Mixpanel integration
 
 ## What is Codex
