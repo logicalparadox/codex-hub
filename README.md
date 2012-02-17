@@ -1,7 +1,10 @@
 # Codex Hub
 
 Codex Hub is a GitHub friendly template for [Codex](https://github.com/logicalparadox/codex) that can be 
-used as a starting point for node & javascript project documentation sites. 
+used as a starting point for node & javascript project documentation sites. View the live preview 
+[documentation site](http://alogicalparadox.com/codex-hub/) for more information and installation instructions.
+
+![Codex Hub](http://f.cl.ly/items/3l3f2W0C0T0a2K1H153Z/codex_hub.png)
 
 ## Getting Help
 
@@ -11,7 +14,7 @@ Please post issues or questions to [Github Issues](http://github.com/logicalpara
 
 (The MIT License)
 
-Copyright (c) 2011 Jake Luer
+Copyright (c) 2012 Jake Luer <jake@alogicalparadox.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
